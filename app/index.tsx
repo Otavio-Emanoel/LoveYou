@@ -30,7 +30,6 @@ const BUTTONS = [
 export default function HomeScreen() {
   const navigation = useNavigation();
 
-  
   const anims = [
     useRef(new Animated.Value(0)),
     useRef(new Animated.Value(0)),
@@ -53,7 +52,7 @@ export default function HomeScreen() {
   return (
     <ThemedView style={styles.container}>
       <Animated.Text style={styles.title}>
-        💌 Love-You
+        💌 Love You
       </Animated.Text>
       <ThemedText type="subtitle" style={styles.subtitle}>
         Um app feito com carinho só pra você!
@@ -95,7 +94,7 @@ export default function HomeScreen() {
       </View>
       <Animated.View style={styles.footer}>
         <ThemedText style={styles.footerText}>
-          Feito com <ThemedText style={{ color: Colors.light.icon }}>♥</ThemedText> por Otavio!
+          Feito com <ThemedText style={{ color: Colors.light.icon, fontFamily: 'Play-Bold' }}>♥</ThemedText> por Otavio para Ágata!
         </ThemedText>
       </Animated.View>
     </ThemedView>
@@ -112,7 +111,7 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 38,
-    fontWeight: 'bold',
+    fontFamily: 'Play-Bold',
     color: Colors.light.icon,
     marginBottom: 8,
     textShadowColor: Colors.light.cardAlt,
@@ -125,6 +124,8 @@ const styles = StyleSheet.create({
     color: Colors.light.text,
     marginBottom: 32,
     textAlign: 'center',
+    fontFamily: 'Play-Regular',
+    fontSize: 20,
   },
   buttonsContainer: {
     width: '100%',
@@ -153,7 +154,8 @@ const styles = StyleSheet.create({
   buttonLabel: {
     fontSize: 22,
     color: Colors.light.text,
-    fontWeight: 'bold',
+    fontFamily: 'Play-Bold',
+    letterSpacing: 1,
   },
   footer: {
     position: 'absolute',
@@ -167,13 +169,13 @@ const styles = StyleSheet.create({
     fontSize: 16,
     backgroundColor: Colors.light.card,
     paddingVertical: 10,
-    paddingHorizontal: 32,
+    paddingHorizontal: 20,
     borderRadius: 20,
     shadowColor: Colors.light.icon,
     shadowOpacity: 0.18,
     shadowRadius: 12,
     shadowOffset: { width: 0, height: 4 },
-    fontWeight: 'bold',
+    fontFamily: 'Play-Regular',
     letterSpacing: 1,
     elevation: 6,
     borderWidth: 1.5,
