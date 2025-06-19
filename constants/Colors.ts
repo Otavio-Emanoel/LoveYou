@@ -14,6 +14,8 @@ export const Colors = {
     card: '#FFF5F9',           // ☁️ Fundo de cards (Branco rosado)
     cardAlt: '#E8DAEF',        // 🪞 Elementos decorativos (Lavanda clara)
     gold: '#F3E5AB',           // 🌟 Detalhes dourados
+    footer: '#F7C8E0',         // 🌸 Fundo do rodapé (Rosé suave)
+    footerText: '#3B3B3B',     // 🖤 Texto do rodapé
   },
   dark: {
     text: '#FFF5F9',           // ☁️ Texto claro para dark mode
