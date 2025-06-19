@@ -3,24 +3,27 @@
  * There are many other ways to style your app. For example, [Nativewind](https://www.nativewind.dev/), [Tamagui](https://tamagui.dev/), [unistyles](https://reactnativeunistyles.vercel.app), etc.
  */
 
-const tintColorLight = '#0a7ea4';
-const tintColorDark = '#fff';
-
 export const Colors = {
   light: {
-    text: '#11181C',
-    background: '#fff',
-    tint: tintColorLight,
-    icon: '#687076',
-    tabIconDefault: '#687076',
-    tabIconSelected: tintColorLight,
+    text: '#3B3B3B',           // 🖤 Texto principal
+    background: '#F7C8E0',     // 🌸 Fundo principal (Rosé suave)
+    tint: '#F78FB3',           // 💖 Botões principais e destaques (Rosa chiclete)
+    icon: '#D86DA4',           // 🎀 Ícones e títulos (Rosa amora)
+    tabIconDefault: '#D86DA4', // 🎀 Ícones inativos
+    tabIconSelected: '#F78FB3',// 💖 Ícones ativos
+    card: '#FFF5F9',           // ☁️ Fundo de cards (Branco rosado)
+    cardAlt: '#E8DAEF',        // 🪞 Elementos decorativos (Lavanda clara)
+    gold: '#F3E5AB',           // 🌟 Detalhes dourados
   },
   dark: {
-    text: '#ECEDEE',
-    background: '#151718',
-    tint: tintColorDark,
-    icon: '#9BA1A6',
-    tabIconDefault: '#9BA1A6',
-    tabIconSelected: tintColorDark,
+    text: '#FFF5F9',           // ☁️ Texto claro para dark mode
+    background: '#3B3B3B',     // 🖤 Fundo escuro (Cinza grafite)
+    tint: '#D86DA4',           // 🎀 Destaques em dark mode
+    icon: '#F78FB3',           // 💖 Ícones em dark mode
+    tabIconDefault: '#E8DAEF', // 🪞 Ícones inativos
+    tabIconSelected: '#F78FB3',// 💖 Ícones ativos
+    card: '#3B3B3B',           // 🖤 Fundo de cards escuro
+    cardAlt: '#D86DA4',        // 🎀 Elementos decorativos escuros
+    gold: '#F3E5AB',           // 🌟 Detalhes dourados
   },
 };
