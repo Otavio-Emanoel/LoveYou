@@ -111,7 +111,13 @@ export default function GiftsScreen() {
         setLoadingStory(true);
         setStory('');
         try {
-            const apiKey = 'AIzaSyDHdgpAkfZVtXv6a0uM5eZT7jm1FS5_2Ks';
+            const apiKey = 'SUA_CHAVE_API_KEY_AQUI'; // Substitua pela sua chave de API do Gemini
+            if (!apiKey) {
+                console.error('Chave de API não configurada');
+                setStory('Chave de API não configurada. Verifique as configurações.');
+                setStoryResultVisible(true);
+                return;
+            }
             let prompt = `Crie uma história curta, romântica e criativa`;
             if (form.protagonist.trim()) prompt += ` com a protagonista chamada ${form.protagonist}`;
             if (form.genre.trim()) prompt += `, no gênero ${form.genre}`;

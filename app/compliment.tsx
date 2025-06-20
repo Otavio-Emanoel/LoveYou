@@ -25,7 +25,6 @@ const compliments = [
   "Se perfeição fosse pessoa, seria você 😍",
   "Eu te amo mais que tudo nesse mundo ❤️",
   "Obrigado por ser tão legal comigo 🥺"
-
 ];
 
 const SCREEN_WIDTH = Dimensions.get('window').width;
@@ -73,6 +72,38 @@ export default function ComplimentScreen() {
   // Animação barra de música
   const anim = useRef(new Animated.Value(0)).current;
 
+  // Função para criar um coração animado
+  function spawnHeartAtRandom() {
+    const id = heartId.current++;
+    const left = Math.random() * (SCREEN_WIDTH * 0.6) + SCREEN_WIDTH * 0.2;
+    const size = 24 + Math.random() * 24;
+    const anim = new Animated.Value(0);
+    const opacity = new Animated.Value(1);
+    const rotate = new Animated.Value(Math.random() * 2 - 1);
+    const colors = ['#D86DA4', '#F78FB3', '#F7C8E0', '#FF69B4', '#FFB6C1'];
+    const color = colors[Math.floor(Math.random() * colors.length)];
+    setHearts(prev => [
+      ...prev,
+      { id, left, size, anim, opacity, rotate, color }
+    ]);
+    Animated.parallel([
+      Animated.timing(anim, {
+        toValue: 1,
+        duration: 2200 + Math.random() * 800,
+        useNativeDriver: false,
+        easing: Easing.out(Easing.quad),
+      }),
+      Animated.timing(opacity, {
+        toValue: 0,
+        duration: 1800 + Math.random() * 800,
+        useNativeDriver: false,
+        easing: Easing.linear,
+      }),
+    ]).start(() => {
+      setHearts(prev => prev.filter(h => h.id !== id));
+    });
+  }
+
   // Animação das barras de música
   useEffect(() => {
     let running = true;
@@ -112,37 +143,9 @@ export default function ComplimentScreen() {
     if (isPlaying) {
       // @ts-ignore
       heartInterval.current = setInterval(() => {
-        const id = heartId.current++;
-        const left = Math.random() * (SCREEN_WIDTH * 0.6) + SCREEN_WIDTH * 0.2;
-        const size = 24 + Math.random() * 24;
-        const anim = new Animated.Value(0);
-        const opacity = new Animated.Value(1);
-        const rotate = new Animated.Value(Math.random() * 2 - 1);
-        const colors = ['#D86DA4', '#F78FB3', '#F7C8E0', '#FF69B4', '#FFB6C1'];
-        const color = colors[Math.floor(Math.random() * colors.length)];
-        setHearts(prev => [
-          ...prev,
-          { id, left, size, anim, opacity, rotate, color }
-        ]);
-        Animated.parallel([
-          Animated.timing(anim, {
-            toValue: 1,
-            duration: 2200 + Math.random() * 800,
-            useNativeDriver: false,
-            easing: Easing.out(Easing.quad),
-          }),
-          Animated.timing(opacity, {
-            toValue: 0,
-            duration: 1800 + Math.random() * 800,
-            useNativeDriver: false,
-            easing: Easing.linear,
-          }),
-        ]).start(() => {
-          setHearts(prev => prev.filter(h => h.id !== id));
-        });
+        spawnHeartAtRandom();
       }, 200);
     }
-    // Não limpe os corações aqui, só pare de criar novos
     return () => {
       if (heartInterval.current) clearInterval(heartInterval.current);
     };
@@ -232,7 +235,7 @@ export default function ComplimentScreen() {
       <Stack.Screen options={{ headerShown: false }} />
       <ThemedView style={styles.container}>
         <ThemedText style={styles.title}>JUNIMOS DANCE ✨</ThemedText>
-        <View style={styles.junimoBox}>
+        <Pressable style={styles.junimoBox} onPress={spawnHeartAtRandom}>
           <Video
             source={require('../assets/images/junimo.mp4')}
             style={styles.junimoGif}
@@ -243,7 +246,7 @@ export default function ComplimentScreen() {
             isMuted={false}
             useNativeControls={false}
           />
-        </View>
+        </Pressable>
         <View style={styles.complimentBox}>
           <ThemedText style={styles.complimentText}>{compliment}</ThemedText>
         </View>
@@ -346,7 +349,7 @@ export default function ComplimentScreen() {
           </View>
         </Modal>
 
-        <View style={styles.chickenDance}>
+        <Pressable style={styles.chickenDance} onPress={spawnHeartAtRandom}>
           <Video
             source={require('../assets/images/galinhaDancando.mp4')}
             style={styles.chickenDanceGif}
@@ -357,9 +360,9 @@ export default function ComplimentScreen() {
             isMuted={false}
             useNativeControls={false}
           />
-        </View>
+        </Pressable>
 
-        <View style={styles.junimoOrange}>
+        <Pressable style={styles.junimoOrange} onPress={spawnHeartAtRandom}>
           <Video
             source={require('../assets/images/junimoLaranja.mp4')}
             style={styles.junimoOrangeGif}
@@ -370,9 +373,9 @@ export default function ComplimentScreen() {
             isMuted={false}
             useNativeControls={false}
           />
-        </View>
+        </Pressable>
 
-        <View style={styles.junimoGreen}>
+        <Pressable style={styles.junimoGreen} onPress={spawnHeartAtRandom}>
           <Video
             source={require('../assets/images/junimoVerde.mp4')}
             style={styles.junimoGreenGif}
@@ -383,7 +386,7 @@ export default function ComplimentScreen() {
             isMuted={false}
             useNativeControls={false}
           />
-        </View>
+        </Pressable>
       </ThemedView>
     </>
   );

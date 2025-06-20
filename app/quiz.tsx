@@ -59,7 +59,7 @@ export default function QuizScreen() {
     }
 
     function handleShare() {
-        const text = `Quiz do Amor 💖\n${getResultText()}\n\nFaça também!`;
+        const text = `Quiz do Otavio 💖\n${getResultText()}\n\n Eu achei...`;
         const url = `https://wa.me/?text=${encodeURIComponent(text)}`;
         Linking.openURL(url);
     }
@@ -214,9 +214,6 @@ export default function QuizScreen() {
                             </Pressable>
                             <Pressable style={styles.closeButton} onPress={() => setModalVisible(false)}>
                                 <ThemedText style={styles.closeButtonText}>Fechar</ThemedText>
-                            </Pressable>
-                            <Pressable style={styles.homeButton} onPress={() => router.push('/')}>
-                                <ThemedText style={styles.homeButtonText}>Voltar à tela inicial</ThemedText>
                             </Pressable>
                         </View>
                     </View>
