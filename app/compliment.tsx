@@ -60,7 +60,7 @@ export default function ComplimentScreen() {
   // Animação barra de música
   const anim = useRef(new Animated.Value(0)).current;
 
-  // Animação das barras de música (igual já estava)
+  // Animação das barras de música
   useEffect(() => {
     let running = true;
 
@@ -94,6 +94,7 @@ export default function ComplimentScreen() {
     };
   }, [isPlaying, barAnims]);
 
+
   // Efeito para criar corações enquanto a música toca
   useEffect(() => {
     if (isPlaying) {
@@ -104,14 +105,13 @@ export default function ComplimentScreen() {
         const size = 24 + Math.random() * 24;
         const anim = new Animated.Value(0);
         const opacity = new Animated.Value(1);
-        const rotate = new Animated.Value(Math.random() * 2 - 1); // -1 a 1
+        const rotate = new Animated.Value(Math.random() * 2 - 1);
         const colors = ['#D86DA4', '#F78FB3', '#F7C8E0', '#FF69B4', '#FFB6C1'];
         const color = colors[Math.floor(Math.random() * colors.length)];
         setHearts(prev => [
           ...prev,
           { id, left, size, anim, opacity, rotate, color }
         ]);
-        // Anima o coração subindo e sumindo
         Animated.parallel([
           Animated.timing(anim, {
             toValue: 1,
@@ -128,7 +128,7 @@ export default function ComplimentScreen() {
         ]).start(() => {
           setHearts(prev => prev.filter(h => h.id !== id));
         });
-      }, 200); // a cada 200ms um novo coração
+      }, 200);
     } else {
       if (heartInterval.current) clearInterval(heartInterval.current);
       setHearts([]);
@@ -137,6 +137,7 @@ export default function ComplimentScreen() {
       if (heartInterval.current) clearInterval(heartInterval.current);
     };
   }, [isPlaying]);
+
 
   function handleCompliment() {
     let newCompliment = compliment;
@@ -168,11 +169,11 @@ export default function ComplimentScreen() {
         useNativeDriver: false,
         easing: Easing.out(Easing.exp),
       }).start();
-      // Escolhe música aleatória
       const randomMusic = musicList[Math.floor(Math.random() * musicList.length)];
       const { sound: newSound } = await Audio.Sound.createAsync(randomMusic, { shouldPlay: true });
       setSound(newSound);
-      newSound.setOnPlaybackStatusUpdate(status => {
+
+      newSound.setOnPlaybackStatusUpdate(async status => {
         if (status.isLoaded && status.didJustFinish) {
           setIsPlaying(false);
           Animated.timing(anim, {
@@ -206,6 +207,9 @@ export default function ComplimentScreen() {
         <View style={styles.complimentBox}>
           <ThemedText style={styles.complimentText}>{compliment}</ThemedText>
         </View>
+        <Pressable style={styles.complimentButton} onPress={handleCompliment}>
+          <ThemedText style={styles.complimentButtonText}>Novo Elogio</ThemedText>
+        </Pressable>
         <Pressable style={styles.musicButton} onPress={handleMusicButton}>
           {!isPlaying ? (
             <ThemedText style={styles.musicButtonText}>Tocar Música 🎵</ThemedText>
@@ -225,7 +229,6 @@ export default function ComplimentScreen() {
               ))}
             </View>
           )}
-          {/* Corações animados */}
           {hearts.map(heart => (
             <Animated.Text
               key={heart.id}
@@ -265,9 +268,6 @@ export default function ComplimentScreen() {
               ❤️
             </Animated.Text>
           ))}
-        </Pressable>
-        <Pressable style={styles.complimentButton} onPress={handleCompliment}>
-          <ThemedText style={styles.complimentButtonText}>Novo Elogio</ThemedText>
         </Pressable>
 
         <Pressable onPress={() => router.push('/')} style={styles.exitButton}>
@@ -451,7 +451,6 @@ const styles = StyleSheet.create({
     shadowColor: '#010101',
     shadowOpacity: 0.5,
     shadowRadius: 15,
-
     position: 'absolute',
     bottom: -20,
     transform: [{ translateY: '-50%' }],
@@ -459,8 +458,6 @@ const styles = StyleSheet.create({
     borderWidth: 2,
     borderColor: '#D86DA4',
     padding: 10,
-
-
   },
   chickenDanceGif: {
     width: '100%',
@@ -476,7 +473,6 @@ const styles = StyleSheet.create({
     marginBottom: 24,
     elevation: 4,
     overflow: 'hidden',
-
     position: 'absolute',
     bottom: 16,
     left: 16,
@@ -499,7 +495,6 @@ const styles = StyleSheet.create({
     marginBottom: 24,
     elevation: 4,
     overflow: 'hidden',
-
     position: 'absolute',
     bottom: 16,
     right: 16,
@@ -507,7 +502,6 @@ const styles = StyleSheet.create({
     borderWidth: 2,
     borderColor: '#D86DA4',
     padding: 4,
-
   },
   junimoGreenGif: {
     width: '100%',
