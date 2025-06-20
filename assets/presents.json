@@ -1,0 +1,702 @@
+[
+    {
+        "id": 1,
+        "emoji": "🐱",
+        "title": "Abraço de Gatinho",
+        "message": "Um abraço quentinho em forma de gatinho para você!",
+        "color": "#FFF5F9"
+    },
+    {
+        "id": 2,
+        "emoji": "☕",
+        "title": "Café Virtual",
+        "message": "Um café virtual feito com amor só pra você!",
+        "color": "#E8DAEF"
+    },
+    {
+        "id": 3,
+        "emoji": "🏆",
+        "title": "Certificado Especial",
+        "message": "Certificado de 'namorada mais perfeita do universo'!",
+        "color": "#F3E5AB"
+    },
+    {
+        "id": 4,
+        "emoji": "🍫",
+        "title": "Chocolate Imaginário",
+        "message": "Um chocolate imaginário para adoçar seu dia!",
+        "color": "#F78FB3"
+    },
+    {
+        "id": 5,
+        "emoji": "🌹",
+        "title": "Rosa Virtual",
+        "message": "Uma rosa virtual para lembrar o quanto você é especial!",
+        "color": "#F7C8E0"
+    },
+    {
+        "id": 6,
+        "emoji": "🧸",
+        "title": "Ursinho Fofo",
+        "message": "Um ursinho fofo para te fazer companhia!",
+        "color": "#D86DAA"
+    },
+    {
+        "id": 7,
+        "emoji": "🎶",
+        "title": "Música do Coração",
+        "message": "Uma música imaginária só para animar seu dia!",
+        "color": "#E8DAEF"
+    },
+    {
+        "id": 8,
+        "emoji": "💌",
+        "title": "Cartinha de Amor",
+        "message": "Uma cartinha de amor cheia de carinho só pra você!",
+        "color": "#FFF5F9"
+    },
+    {
+        "id": 9,
+        "emoji": "🎈",
+        "title": "Balão da Alegria",
+        "message": "Um balão para colorir seu dia!",
+        "color": "#F78FB3"
+    },
+    {
+        "id": 10,
+        "emoji": "🍦",
+        "title": "Sorvete Virtual",
+        "message": "Um sorvete geladinho para refrescar seu coração!",
+        "color": "#F3E5AB"
+    },
+    {
+        "id": 11,
+        "emoji": "🦄",
+        "title": "Unicórnio Encantado",
+        "message": "Um unicórnio mágico para te trazer sorte!",
+        "color": "#E8DAEF"
+    },
+    {
+        "id": 12,
+        "emoji": "🌟",
+        "title": "Estrela Brilhante",
+        "message": "Uma estrela para iluminar seu caminho!",
+        "color": "#F7C8E0"
+    },
+    {
+        "id": 13,
+        "emoji": "🍰",
+        "title": "Bolo Virtual",
+        "message": "Um bolo delicioso para comemorar você!",
+        "color": "#FFF5F9"
+    },
+    {
+        "id": 14,
+        "emoji": "🦋",
+        "title": "Borboleta Colorida",
+        "message": "Uma borboleta para alegrar seu dia!",
+        "color": "#D86DA4"
+    },
+    {
+        "id": 15,
+        "emoji": "🎤",
+        "title": "Show Particular",
+        "message": "Um show só para você, estrela!",
+        "color": "#F78FB3"
+    },
+    {
+        "id": 16,
+        "emoji": "🍭",
+        "title": "Pirulito Doce",
+        "message": "Um pirulito para adoçar sua vida!",
+        "color": "#F3E5AB"
+    },
+    {
+        "id": 17,
+        "emoji": "🧁",
+        "title": "Cupcake Virtual",
+        "message": "Um cupcake fofinho só pra você!",
+        "color": "#FFF5F9"
+    },
+    {
+        "id": 18,
+        "emoji": "🎨",
+        "title": "Quadro de Arte",
+        "message": "Uma obra de arte feita com carinho!",
+        "color": "#E8DAEF"
+    },
+    {
+        "id": 19,
+        "emoji": "🌈",
+        "title": "Arco-íris",
+        "message": "Um arco-íris para colorir seu mundo!",
+        "color": "#F7C8E0"
+    },
+    {
+        "id": 20,
+        "emoji": "🎬",
+        "title": "Sessão de Cinema",
+        "message": "Um ingresso para um filme especial juntos!",
+        "color": "#D86DA4"
+    },
+    {
+        "id": 21,
+        "emoji": "🍕",
+        "title": "Pizza Virtual",
+        "message": "Uma pizza deliciosa só pra você!",
+        "color": "#F78FB3"
+    },
+    {
+        "id": 22,
+        "emoji": "🎲",
+        "title": "Jogo Divertido",
+        "message": "Um jogo para brincar e sorrir!",
+        "color": "#F3E5AB"
+    },
+    {
+        "id": 23,
+        "emoji": "🧩",
+        "title": "Quebra-cabeça",
+        "message": "Uma peça que faltava: você!",
+        "color": "#E8DAEF"
+    },
+    {
+        "id": 24,
+        "emoji": "🎹",
+        "title": "Piano Encantado",
+        "message": "Uma melodia só para você!",
+        "color": "#FFF5F9"
+    },
+    {
+        "id": 25,
+        "emoji": "🍓",
+        "title": "Morangos Doces",
+        "message": "Morangos fresquinhos para alegrar!",
+        "color": "#F7C8E0"
+    },
+    {
+        "id": 26,
+        "emoji": "🎧",
+        "title": "Playlist Especial",
+        "message": "Uma playlist feita só pra você!",
+        "color": "#D86DA4"
+    },
+    {
+        "id": 27,
+        "emoji": "🍿",
+        "title": "Pipoca Quentinha",
+        "message": "Pipoca para nossa sessão de cinema!",
+        "color": "#F78FB3"
+    },
+    {
+        "id": 28,
+        "emoji": "🧃",
+        "title": "Suco Refrescante",
+        "message": "Um suco geladinho para animar!",
+        "color": "#F3E5AB"
+    },
+    {
+        "id": 29,
+        "emoji": "🦊",
+        "title": "Raposa Fofa",
+        "message": "Uma raposinha para te fazer companhia!",
+        "color": "#E8DAEF"
+    },
+    {
+        "id": 30,
+        "emoji": "🍉",
+        "title": "Melancia Doce",
+        "message": "Uma fatia de melancia para refrescar!",
+        "color": "#FFF5F9"
+    },
+    {
+        "id": 31,
+        "emoji": "🎂",
+        "title": "Bolo de Aniversário",
+        "message": "Um parabéns especial só pra você!",
+        "color": "#F7C8E0"
+    },
+    {
+        "id": 32,
+        "emoji": "🦁",
+        "title": "Leão Protetor",
+        "message": "Um leão para te proteger sempre!",
+        "color": "#D86DA4"
+    },
+    {
+        "id": 33,
+        "emoji": "🍪",
+        "title": "Cookie Quentinho",
+        "message": "Um cookie recém-saído do forno!",
+        "color": "#F78FB3"
+    },
+    {
+        "id": 34,
+        "emoji": "🦜",
+        "title": "Papagaio Falante",
+        "message": "Um papagaio para animar a conversa!",
+        "color": "#F3E5AB"
+    },
+    {
+        "id": 35,
+        "emoji": "🍩",
+        "title": "Donut Colorido",
+        "message": "Um donut para adoçar seu dia!",
+        "color": "#E8DAEF"
+    },
+    {
+        "id": 36,
+        "emoji": "🦉",
+        "title": "Coruja Sábia",
+        "message": "Uma coruja para te inspirar!",
+        "color": "#FFF5F9"
+    },
+    {
+        "id": 37,
+        "emoji": "🍒",
+        "title": "Cerejas Doces",
+        "message": "Cerejas para um toque especial!",
+        "color": "#F7C8E0"
+    },
+    {
+        "id": 38,
+        "emoji": "🦄",
+        "title": "Unicórnio Mágico",
+        "message": "Mais magia para o seu dia!",
+        "color": "#D86DA4"
+    },
+    {
+        "id": 39,
+        "emoji": "🍔",
+        "title": "Hambúrguer Virtual",
+        "message": "Um hambúrguer só pra você!",
+        "color": "#F78FB3"
+    },
+    {
+        "id": 40,
+        "emoji": "🦋",
+        "title": "Borboleta Azul",
+        "message": "Uma borboleta azul para te alegrar!",
+        "color": "#F3E5AB"
+    },
+    {
+        "id": 41,
+        "emoji": "🍟",
+        "title": "Batata Frita",
+        "message": "Batatinhas crocantes para você!",
+        "color": "#E8DAEF"
+    },
+    {
+        "id": 42,
+        "emoji": "🦢",
+        "title": "Cisne Elegante",
+        "message": "Um cisne para trazer paz!",
+        "color": "#FFF5F9"
+    },
+    {
+        "id": 43,
+        "emoji": "🍇",
+        "title": "Uvas Doces",
+        "message": "Uvas fresquinhas para adoçar!",
+        "color": "#F7C8E0"
+    },
+    {
+        "id": 44,
+        "emoji": "🦓",
+        "title": "Zebra Divertida",
+        "message": "Uma zebra para animar!",
+        "color": "#D86DA4"
+    },
+    {
+        "id": 45,
+        "emoji": "🍰",
+        "title": "Fatia de Bolo",
+        "message": "Uma fatia de bolo só pra você!",
+        "color": "#F78FB3"
+    },
+    {
+        "id": 46,
+        "emoji": "🦒",
+        "title": "Girafa Amiga",
+        "message": "Uma girafa para te dar um abraço!",
+        "color": "#F3E5AB"
+    },
+    {
+        "id": 47,
+        "emoji": "🍋",
+        "title": "Limão Refrescante",
+        "message": "Um limão para dar energia!",
+        "color": "#E8DAEF"
+    },
+    {
+        "id": 48,
+        "emoji": "🦔",
+        "title": "Ouriço Fofo",
+        "message": "Um ouriço para te proteger!",
+        "color": "#FFF5F9"
+    },
+    {
+        "id": 49,
+        "emoji": "🍊",
+        "title": "Laranja Suculenta",
+        "message": "Uma laranja para animar!",
+        "color": "#F7C8E0"
+    },
+    {
+        "id": 50,
+        "emoji": "🦝",
+        "title": "Guaxinim Travesso",
+        "message": "Um guaxinim para brincar!",
+        "color": "#D86DA4"
+    },
+    {
+        "id": 51,
+        "emoji": "🍏",
+        "title": "Maçã Verde",
+        "message": "Uma maçã verde para refrescar!",
+        "color": "#F78FB3"
+    },
+    {
+        "id": 52,
+        "emoji": "🦙",
+        "title": "Lhama Charmosa",
+        "message": "Uma lhama para te fazer sorrir!",
+        "color": "#F3E5AB"
+    },
+    {
+        "id": 53,
+        "emoji": "🍎",
+        "title": "Maçã Vermelha",
+        "message": "Uma maçã vermelha para adoçar!",
+        "color": "#E8DAEF"
+    },
+    {
+        "id": 54,
+        "emoji": "🦥",
+        "title": "Bicho-preguiça",
+        "message": "Um bicho-preguiça para relaxar!",
+        "color": "#FFF5F9"
+    },
+    {
+        "id": 55,
+        "emoji": "🍐",
+        "title": "Pera Suculenta",
+        "message": "Uma pera para refrescar!",
+        "color": "#F7C8E0"
+    },
+    {
+        "id": 56,
+        "emoji": "🦨",
+        "title": "Gambá Fofo",
+        "message": "Um gambá para animar!",
+        "color": "#D86DA4"
+    },
+    {
+        "id": 57,
+        "emoji": "🍑",
+        "title": "Pêssego Doce",
+        "message": "Um pêssego para adoçar!",
+        "color": "#F78FB3"
+    },
+    {
+        "id": 58,
+        "emoji": "🦦",
+        "title": "Lontra Brincalhona",
+        "message": "Uma lontra para brincar!",
+        "color": "#F3E5AB"
+    },
+    {
+        "id": 59,
+        "emoji": "🍒",
+        "title": "Cereja Dupla",
+        "message": "Duas cerejas para você!",
+        "color": "#E8DAEF"
+    },
+    {
+        "id": 60,
+        "emoji": "🦨",
+        "title": "Gambá Travesso",
+        "message": "Um gambá para te animar!",
+        "color": "#FFF5F9"
+    },
+    {
+        "id": 61,
+        "emoji": "🍍",
+        "title": "Abacaxi Tropical",
+        "message": "Um abacaxi para refrescar!",
+        "color": "#F7C8E0"
+    },
+    {
+        "id": 62,
+        "emoji": "🦦",
+        "title": "Lontra Fofa",
+        "message": "Uma lontra para te alegrar!",
+        "color": "#D86DA4"
+    },
+    {
+        "id": 63,
+        "emoji": "🍈",
+        "title": "Melão Doce",
+        "message": "Um melão para adoçar!",
+        "color": "#F78FB3"
+    },
+    {
+        "id": 64,
+        "emoji": "🦦",
+        "title": "Lontra Feliz",
+        "message": "Uma lontra para sorrir!",
+        "color": "#F3E5AB"
+    },
+    {
+        "id": 65,
+        "emoji": "🍅",
+        "title": "Tomate Suculento",
+        "message": "Um tomate para animar!",
+        "color": "#E8DAEF"
+    },
+    {
+        "id": 66,
+        "emoji": "🦦",
+        "title": "Lontra Carinhosa",
+        "message": "Uma lontra para te abraçar!",
+        "color": "#FFF5F9"
+    },
+    {
+        "id": 67,
+        "emoji": "🍆",
+        "title": "Berinjela Divertida",
+        "message": "Uma berinjela para brincar!",
+        "color": "#F7C8E0"
+    },
+    {
+        "id": 68,
+        "emoji": "🦦",
+        "title": "Lontra Animada",
+        "message": "Uma lontra para te animar!",
+        "color": "#D86DA4"
+    },
+    {
+        "id": 69,
+        "emoji": "🥑",
+        "title": "Abacate Saudável",
+        "message": "Um abacate para sua saúde!",
+        "color": "#F78FB3"
+    },
+    {
+        "id": 70,
+        "emoji": "🦦",
+        "title": "Lontra Saltitante",
+        "message": "Uma lontra para pular!",
+        "color": "#F3E5AB"
+    },
+    {
+        "id": 71,
+        "emoji": "🥝",
+        "title": "Kiwi Refrescante",
+        "message": "Um kiwi para refrescar!",
+        "color": "#E8DAEF"
+    },
+    {
+        "id": 72,
+        "emoji": "🦦",
+        "title": "Lontra Curiosa",
+        "message": "Uma lontra para explorar!",
+        "color": "#FFF5F9"
+    },
+    {
+        "id": 73,
+        "emoji": "🥥",
+        "title": "Coco Tropical",
+        "message": "Um coco para refrescar!",
+        "color": "#F7C8E0"
+    },
+    {
+        "id": 74,
+        "emoji": "🦦",
+        "title": "Lontra Esperta",
+        "message": "Uma lontra para te inspirar!",
+        "color": "#D86DA4"
+    },
+    {
+        "id": 75,
+        "emoji": "🥕",
+        "title": "Cenoura Saudável",
+        "message": "Uma cenoura para sua saúde!",
+        "color": "#F78FB3"
+    },
+    {
+        "id": 76,
+        "emoji": "🦦",
+        "title": "Lontra Sonhadora",
+        "message": "Uma lontra para sonhar!",
+        "color": "#F3E5AB"
+    },
+    {
+        "id": 77,
+        "emoji": "🌽",
+        "title": "Milho Quentinho",
+        "message": "Um milho para aquecer!",
+        "color": "#E8DAEF"
+    },
+    {
+        "id": 78,
+        "emoji": "🦦",
+        "title": "Lontra Amável",
+        "message": "Uma lontra para te amar!",
+        "color": "#FFF5F9"
+    },
+    {
+        "id": 79,
+        "emoji": "🥔",
+        "title": "Batata Divertida",
+        "message": "Uma batata para brincar!",
+        "color": "#F7C8E0"
+    },
+    {
+        "id": 80,
+        "emoji": "🦦",
+        "title": "Lontra Feliz",
+        "message": "Uma lontra para sorrir!",
+        "color": "#D86DA4"
+    },
+    {
+        "id": 81,
+        "emoji": "🥒",
+        "title": "Pepino Refrescante",
+        "message": "Um pepino para refrescar!",
+        "color": "#F78FB3"
+    },
+    {
+        "id": 82,
+        "emoji": "🦦",
+        "title": "Lontra Brincalhona",
+        "message": "Uma lontra para brincar!",
+        "color": "#F3E5AB"
+    },
+    {
+        "id": 83,
+        "emoji": "🥬",
+        "title": "Alface Fresca",
+        "message": "Uma alface para sua saúde!",
+        "color": "#E8DAEF"
+    },
+    {
+        "id": 84,
+        "emoji": "🦦",
+        "title": "Lontra Carinhosa",
+        "message": "Uma lontra para te abraçar!",
+        "color": "#FFF5F9"
+    },
+    {
+        "id": 85,
+        "emoji": "🥦",
+        "title": "Brócolis Saudável",
+        "message": "Um brócolis para sua saúde!",
+        "color": "#F7C8E0"
+    },
+    {
+        "id": 86,
+        "emoji": "🦦",
+        "title": "Lontra Animada",
+        "message": "Uma lontra para te animar!",
+        "color": "#D86DA4"
+    },
+    {
+        "id": 87,
+        "emoji": "🥜",
+        "title": "Amendoim Crocante",
+        "message": "Um amendoim para petiscar!",
+        "color": "#F78FB3"
+    },
+    {
+        "id": 88,
+        "emoji": "🦦",
+        "title": "Lontra Saltitante",
+        "message": "Uma lontra para pular!",
+        "color": "#F3E5AB"
+    },
+    {
+        "id": 89,
+        "emoji": "🥨",
+        "title": "Pretzel Divertido",
+        "message": "Um pretzel para brincar!",
+        "color": "#E8DAEF"
+    },
+    {
+        "id": 90,
+        "emoji": "🦦",
+        "title": "Lontra Curiosa",
+        "message": "Uma lontra para explorar!",
+        "color": "#FFF5F9"
+    },
+    {
+        "id": 91,
+        "emoji": "🥯",
+        "title": "Bagel Saboroso",
+        "message": "Um bagel para saborear!",
+        "color": "#F7C8E0"
+    },
+    {
+        "id": 92,
+        "emoji": "🦦",
+        "title": "Lontra Esperta",
+        "message": "Uma lontra para te inspirar!",
+        "color": "#D86DA4"
+    },
+    {
+        "id": 93,
+        "emoji": "🥚",
+        "title": "Ovo Surpresa",
+        "message": "Um ovo com surpresa pra você!",
+        "color": "#F78FB3"
+    },
+    {
+        "id": 94,
+        "emoji": "🦦",
+        "title": "Lontra Sonhadora",
+        "message": "Uma lontra para sonhar!",
+        "color": "#F3E5AB"
+    },
+    {
+        "id": 95,
+        "emoji": "🥓",
+        "title": "Bacon Crocante",
+        "message": "Um bacon para alegrar!",
+        "color": "#E8DAEF"
+    },
+    {
+        "id": 96,
+        "emoji": "🦦",
+        "title": "Lontra Amável",
+        "message": "Uma lontra para te amar!",
+        "color": "#FFF5F9"
+    },
+    {
+        "id": 97,
+        "emoji": "🥩",
+        "title": "Bife Suculento",
+        "message": "Um bife para saborear!",
+        "color": "#F7C8E0"
+    },
+    {
+        "id": 98,
+        "emoji": "🦦",
+        "title": "Lontra Feliz",
+        "message": "Uma lontra para sorrir!",
+        "color": "#D86DA4"
+    },
+    {
+        "id": 99,
+        "emoji": "🥟",
+        "title": "Guioza Oriental",
+        "message": "Um guioza para experimentar!",
+        "color": "#F78FB3"
+    },
+    {
+        "id": 100,
+        "emoji": "🦦",
+        "title": "Lontra Brincalhona",
+        "message": "Uma lontra para brincar!",
+        "color": "#F3E5AB"
+    }
+]
