@@ -1,4 +1,4 @@
-import { useNavigation } from 'expo-router';
+import { useRouter } from 'expo-router';
 import { useEffect, useRef } from 'react';
 import { Animated, Pressable, StyleSheet, View } from 'react-native';
 
@@ -6,7 +6,9 @@ import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
 import { Colors } from '@/constants/Colors';
 
-const BUTTONS = [
+type Route = '/' | '/gifts' | '/quiz' | '/compliment';
+
+const BUTTONS: { label: string; emoji: string; color: string; route: Route }[] = [
   {
     label: 'Presentes Virtuais',
     emoji: '🎁',
@@ -28,7 +30,7 @@ const BUTTONS = [
 ];
 
 export default function HomeScreen() {
-  const navigation = useNavigation();
+  const router = useRouter();
 
   const anims = [
     useRef(new Animated.Value(0)),
@@ -82,7 +84,7 @@ export default function HomeScreen() {
                 },
               ]}
               android_ripple={{ color: Colors.light.cardAlt }}
-              onPress={() => navigation.navigate(btn.route as never)}
+              onPress={() => router.push(btn.route)}
             >
               <ThemedText style={styles.buttonEmoji}>{btn.emoji}</ThemedText>
               <ThemedText type="subtitle" style={styles.buttonLabel}>
