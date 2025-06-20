@@ -1,7 +1,7 @@
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
 import { Colors } from '@/constants/Colors';
-import { Stack, useNavigation } from 'expo-router';
+import { Stack, useRouter } from 'expo-router';
 import { useRef, useState } from 'react';
 import { ActivityIndicator, Animated, Clipboard, Dimensions, Modal, PanResponder, Platform, Pressable, ScrollView, StyleSheet, TextInput, View } from 'react-native';
 import presentsData from '../assets/presents.json';
@@ -27,7 +27,7 @@ function shuffleArray<T>(array: T[]): T[] {
 }
 
 export default function GiftsScreen() {
-    const navigation = useNavigation();
+        const router = useRouter();
 
     // Embaralha os presentes apenas uma vez ao montar o componente
     const shuffledPresents = useRef<Present[]>(shuffleArray(presentsData as Present[])).current;
@@ -216,8 +216,8 @@ export default function GiftsScreen() {
                     <ThemedText style={styles.geminiButtonText}>Gerar história</ThemedText>
                 </Pressable>
 
-                <Pressable style={styles.backButton} onPress={() => navigation.goBack()}>
-                    <ThemedText style={styles.backButtonText}>Voltar</ThemedText>
+                <Pressable style={styles.backButton} onPress={() => router.push('/')}>
+                    <ThemedText style={styles.backButtonText}>Voltar à tela inicial</ThemedText>
                 </Pressable>
 
                 {/* Modal do formulário para gerar história */}

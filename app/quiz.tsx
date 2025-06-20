@@ -1,10 +1,9 @@
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
-import { Stack, useNavigation } from 'expo-router';
+import { Stack, useRouter } from 'expo-router';
 import { useRef, useState } from 'react';
 import { Animated, Dimensions, Linking, Modal, Pressable, ScrollView, StyleSheet, View } from 'react-native';
 import quizData from '../assets/quiz.json';
-
 
 type Question = {
     id: number;
@@ -19,8 +18,7 @@ export default function QuizScreen() {
     const [answers, setAnswers] = useState<(number | null)[]>(Array(quizData.length).fill(null));
     const [showResult, setShowResult] = useState(false);
     const [modalVisible, setModalVisible] = useState(false);
-    const navigation = useNavigation();
-
+    const router = useRouter();
 
     // Animations: one Animated.Value for each option of each question
     const optionAnims = useRef(
@@ -61,7 +59,6 @@ export default function QuizScreen() {
     }
 
     function handleShare() {
-        const correct = answers.filter((ans, idx) => ans === quizData[idx].answer).length;
         const text = `Quiz do Amor 💖\n${getResultText()}\n\nFaça também!`;
         const url = `https://wa.me/?text=${encodeURIComponent(text)}`;
         Linking.openURL(url);
@@ -94,7 +91,7 @@ export default function QuizScreen() {
 
                                     // Animation: bar grows from left to right when selected
                                     const anim = optionAnims[qIdx][optIdx];
-                                    const backgroundColor = anim.interpolate({
+                                    const animatedBg = anim.interpolate({
                                         inputRange: [0, 1],
                                         outputRange: ['#E8DAEF', '#F3E5AB'],
                                     });
@@ -103,13 +100,16 @@ export default function QuizScreen() {
                                         outputRange: ['0%', '100%'],
                                     });
 
-                                    // After result, keep correct/wrong coloring
-                                    let finalBg = backgroundColor;
-                                    if (showResult) {
-                                        if (isCorrect) finalBg = '#E0FFD8';
-                                        else if (isWrong) finalBg = '#FFD6D6';
-                                        else if (isSelected) finalBg = '#F3E5AB';
-                                        else finalBg = '#E8DAEF';
+                                    const isResult = showResult;
+                                    let backgroundColor: string | Animated.AnimatedInterpolation<string>;
+
+                                    if (isResult) {
+                                        if (isCorrect) backgroundColor = '#E0FFD8';
+                                        else if (isWrong) backgroundColor = '#FFD6D6';
+                                        else if (isSelected) backgroundColor = '#F3E5AB';
+                                        else backgroundColor = '#E8DAEF';
+                                    } else {
+                                        backgroundColor = animatedBg as any;
                                     }
 
                                     return (
@@ -122,9 +122,8 @@ export default function QuizScreen() {
                                             <Animated.View
                                                 style={[
                                                     styles.optionAnimated,
-                                                    {
-                                                        backgroundColor: showResult ? finalBg : backgroundColor,
-                                                    },
+                                                    // @ts-ignore
+                                                    { backgroundColor }
                                                 ]}
                                             >
                                                 {/* Animated bar */}
@@ -167,7 +166,7 @@ export default function QuizScreen() {
                         </ThemedText>
                     </Pressable>
                 ) : null}
-                <Pressable style={styles.homeButton} onPress={() => navigation.navigate("index")}>
+                <Pressable style={styles.homeButton} onPress={() => router.push('/')}>
                     <ThemedText style={styles.homeButtonText}>Voltar à tela inicial</ThemedText>
                 </Pressable>
 
@@ -215,6 +214,9 @@ export default function QuizScreen() {
                             </Pressable>
                             <Pressable style={styles.closeButton} onPress={() => setModalVisible(false)}>
                                 <ThemedText style={styles.closeButtonText}>Fechar</ThemedText>
+                            </Pressable>
+                            <Pressable style={styles.homeButton} onPress={() => router.push('/')}>
+                                <ThemedText style={styles.homeButtonText}>Voltar à tela inicial</ThemedText>
                             </Pressable>
                         </View>
                     </View>
