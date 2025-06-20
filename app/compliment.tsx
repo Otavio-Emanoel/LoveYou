@@ -3,7 +3,7 @@ import { ThemedView } from '@/components/ThemedView';
 import { Audio, Video } from 'expo-av';
 import { Stack, useRouter } from 'expo-router';
 import { useEffect, useRef, useState } from 'react';
-import { Animated, Dimensions, Easing, Pressable, StyleSheet, View } from 'react-native';
+import { Animated, Dimensions, Easing, Modal, Pressable, StyleSheet, View } from 'react-native';
 
 const compliments = [
   "Você é incrível!",
@@ -15,7 +15,17 @@ const compliments = [
   "Você é inspiração!",
   "Seu jeito é único!",
   "Você merece tudo de bom!",
-  "Você é uma ótima namorada!"
+  "Você é a melhor namorada do mundo!",
+  "Sua presença é mágica!",
+  "Você é uma pessoa maravilhosa!",
+  "Você é a razão do meu sorriso!",
+  "Você é a luz da minha vida!",
+  "Você é tão 🫦",
+  "Seloco voce é linda demais 😍😍😍",
+  "Se perfeição fosse pessoa, seria você 😍",
+  "Eu te amo mais que tudo nesse mundo ❤️",
+  "Obrigado por ser tão legal comigo 🥺"
+
 ];
 
 const SCREEN_WIDTH = Dimensions.get('window').width;
@@ -57,6 +67,9 @@ export default function ComplimentScreen() {
   const heartId = useRef(0);
   const heartInterval = useRef<NodeJS.Timeout | null>(null);
 
+  // Modal de confirmação de saída
+  const [showExitModal, setShowExitModal] = useState(false);
+
   // Animação barra de música
   const anim = useRef(new Animated.Value(0)).current;
 
@@ -94,7 +107,6 @@ export default function ComplimentScreen() {
     };
   }, [isPlaying, barAnims]);
 
-
   // Efeito para criar corações enquanto a música toca
   useEffect(() => {
     if (isPlaying) {
@@ -116,28 +128,32 @@ export default function ComplimentScreen() {
           Animated.timing(anim, {
             toValue: 1,
             duration: 2200 + Math.random() * 800,
-            useNativeDriver: false, 
+            useNativeDriver: false,
             easing: Easing.out(Easing.quad),
           }),
           Animated.timing(opacity, {
             toValue: 0,
             duration: 1800 + Math.random() * 800,
-            useNativeDriver: false, 
+            useNativeDriver: false,
             easing: Easing.linear,
           }),
         ]).start(() => {
           setHearts(prev => prev.filter(h => h.id !== id));
         });
       }, 200);
-    } else {
-      if (heartInterval.current) clearInterval(heartInterval.current);
-      setHearts([]);
     }
+    // Não limpe os corações aqui, só pare de criar novos
     return () => {
       if (heartInterval.current) clearInterval(heartInterval.current);
     };
   }, [isPlaying]);
 
+  // Limpa os corações só quando a música para
+  useEffect(() => {
+    if (!isPlaying) {
+      setHearts([]);
+    }
+  }, [isPlaying]);
 
   function handleCompliment() {
     let newCompliment = compliment;
@@ -185,6 +201,30 @@ export default function ComplimentScreen() {
         }
       });
     }
+  }
+
+  // Botão voltar com modal
+  function handleBackPress() {
+    if (isPlaying) {
+      setShowExitModal(true);
+    } else {
+      router.push('/');
+    }
+  }
+
+  async function handleConfirmExit() {
+    setShowExitModal(false);
+    setIsPlaying(false);
+    if (sound) {
+      await sound.stopAsync();
+      await sound.unloadAsync();
+      setSound(null);
+    }
+    router.push('/');
+  }
+
+  function handleCancelExit() {
+    setShowExitModal(false);
   }
 
   return (
@@ -270,11 +310,41 @@ export default function ComplimentScreen() {
           ))}
         </Pressable>
 
-        <Pressable onPress={() => router.push('/')} style={styles.exitButton}>
+        <Pressable onPress={handleBackPress} style={styles.exitButton}>
           <ThemedText type="link" style={styles.exitButtonText}>
             Voltar
           </ThemedText>
         </Pressable>
+
+        {/* Modal de confirmação para sair com música tocando */}
+        <Modal
+          visible={showExitModal}
+          transparent
+          animationType="fade"
+          onRequestClose={handleCancelExit}
+        >
+          <View style={styles.modalOverlay}>
+            <View style={styles.modalContent}>
+              <ThemedText style={styles.modalTitle}>
+                A música está tocando! Deseja parar a música e voltar?
+              </ThemedText>
+              <View style={styles.modalButtonsRow}>
+                <Pressable
+                  style={[styles.exitButton, { backgroundColor: '#F78FB3', marginRight: 8 }]}
+                  onPress={handleConfirmExit}
+                >
+                  <ThemedText style={styles.exitButtonText}>Parar e Voltar</ThemedText>
+                </Pressable>
+                <Pressable
+                  style={[styles.exitButton, { backgroundColor: '#DDD' }]}
+                  onPress={handleCancelExit}
+                >
+                  <ThemedText style={[styles.exitButtonText, { color: '#D86DA4' }]}>Cancelar</ThemedText>
+                </Pressable>
+              </View>
+            </View>
+          </View>
+        </Modal>
 
         <View style={styles.chickenDance}>
           <Video
@@ -437,6 +507,35 @@ const styles = StyleSheet.create({
     fontFamily: 'Play-Bold',
     fontSize: 16,
     textAlign: 'center',
+  },
+  modalOverlay: {
+    flex: 1,
+    backgroundColor: '#0008',
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 24,
+  },
+  modalContent: {
+    backgroundColor: '#FFF5F9',
+    borderRadius: 20,
+    padding: 32,
+    alignItems: 'center',
+    width: '90%',
+    maxWidth: 340,
+    elevation: 10,
+  },
+  modalTitle: {
+    fontSize: 20,
+    color: '#D86DA4',
+    marginBottom: 16,
+    textAlign: 'center',
+    fontFamily: 'Play-Bold',
+  },
+  modalButtonsRow: {
+    flexDirection: 'row',
+    gap: 16,
+    marginTop: 8,
+    paddingHorizontal: 10,
   },
   chickenDance: {
     width: SCREEN_WIDTH * 0.25,
