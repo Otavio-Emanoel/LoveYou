@@ -36,11 +36,12 @@ export default function ComplimentScreen() {
     <>
       <Stack.Screen options={{ headerShown: false }} />
       <ThemedView style={styles.container}>
-        <ThemedText style={styles.title}>Elogios</ThemedText>
+        <ThemedText style={styles.title}>JUNIMOS DANCE ✨</ThemedText>
         <View style={styles.junimoBox}>
           <Video
             source={require('../assets/images/junimo.mp4')}
             style={styles.junimoGif}
+            // @ts-ignore
             resizeMode="cover"
             isLooping
             shouldPlay
@@ -59,7 +60,47 @@ export default function ComplimentScreen() {
             Voltar
           </ThemedText>
         </Pressable>
+
+        <View style={styles.chickenDance}>
+          <Video
+            source={require('../assets/images/galinhaDancando.mp4')}
+            style={styles.chickenDanceGif}
+            // @ts-ignore
+            resizeMode="cover"
+            isLooping
+            shouldPlay
+            isMuted={false}
+            useNativeControls={false}
+          />
+        </View>
+
+        <View style={styles.junimoOrange}>
+          <Video
+            source={require('../assets/images/junimoLaranja.mp4')}
+            style={styles.junimoOrangeGif}
+            // @ts-ignore
+            resizeMode="cover"
+            isLooping
+            shouldPlay
+            isMuted={false}
+            useNativeControls={false}
+          />
+        </View>
+
+        <View style={styles.junimoGreen}>
+          <Video
+            source={require('../assets/images/junimoVerde.mp4')}
+            style={styles.junimoGreenGif}
+            // @ts-ignore
+            resizeMode="cover"
+            isLooping
+            shouldPlay
+            isMuted={false}
+            useNativeControls={false}
+          />
+        </View>
       </ThemedView>
+
     </>
   );
 }
@@ -78,6 +119,16 @@ const styles = StyleSheet.create({
     color: '#D86DA4',
     marginBottom: 24,
     textAlign: 'center',
+    width: '100%',
+    paddingHorizontal: 16,
+    lineHeight: 40,
+    shadowColor: '#010101',
+    shadowOpacity: 0.5,
+    shadowRadius: 15,
+    shadowOffset: { width: 0, height: 2 },
+    elevation: 2,
+    backgroundColor: '#F9F9F9',
+    borderRadius: 16,
   },
   junimoBox: {
     width: SCREEN_WIDTH * 0.6,
@@ -142,4 +193,78 @@ const styles = StyleSheet.create({
     fontSize: 16,
     textAlign: 'center',
   },
+  chickenDance: {
+    width: SCREEN_WIDTH * 0.25,
+    height: SCREEN_WIDTH * 0.25,
+    borderRadius: 10,
+    overflow: 'hidden',
+    marginBottom: 24,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: '#FFF',
+    elevation: 4,
+    shadowColor: '#010101',
+    shadowOpacity: 0.5,
+    shadowRadius: 15,
+
+    position: 'absolute',
+    bottom: 16,
+    right: 16,
+    zIndex: 10,
+    borderWidth: 2,
+    borderColor: '#D86DA4',
+    padding: 4,
+  },
+  chickenDanceGif: {
+    width: '100%',
+    height: '100%',
+  },
+  junimoOrange: {
+    width: SCREEN_WIDTH * 0.25,
+    height: SCREEN_WIDTH * 0.25,
+    backgroundColor: '#FFF',
+    borderRadius: SCREEN_WIDTH * 0.3,
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginBottom: 24,
+    elevation: 4,
+    overflow: 'hidden',
+
+    position: 'absolute',
+    bottom: 16,
+    left: 16,
+    zIndex: 10,
+    borderWidth: 2,
+    borderColor: '#D86DA4',
+    padding: 4,
+  },
+  junimoOrangeGif: {
+    width: '100%',
+    height: '100%',
+  },
+  junimoGreen: {
+    width: SCREEN_WIDTH * 0.3,
+    height: SCREEN_WIDTH * 0.3,
+    backgroundColor: '#DBEAC7',
+    borderRadius: SCREEN_WIDTH * 0.3,
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginBottom: 24,
+    elevation: 4,
+    overflow: 'hidden',
+
+    position: 'absolute',
+    bottom: 20,
+    transform: [{ translateY: '-50%' }],
+    zIndex: 10,
+    borderWidth: 2,
+    borderColor: '#D86DA4',
+    padding: 10,
+
+  },
+  junimoGreenGif: {
+    width: '100%',
+    height: '100%',
+  },
+
 });
