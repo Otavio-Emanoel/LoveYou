@@ -1,8 +1,9 @@
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
+import { Video } from 'expo-av';
 import { Stack, useRouter } from 'expo-router';
 import { useState } from 'react';
-import { Pressable, StyleSheet, View } from 'react-native';
+import { Dimensions, Pressable, StyleSheet, View } from 'react-native';
 
 const compliments = [
   "Você é incrível!",
@@ -14,12 +15,13 @@ const compliments = [
   "Você é inspiração!",
   "Seu jeito é único!",
   "Você merece tudo de bom!",
-  "Você é um(a) grande amigo(a)!"
+  "Você é uma ótima namorada!"
 ];
+
+const SCREEN_WIDTH = Dimensions.get('window').width;
 
 export default function ComplimentScreen() {
   const [compliment, setCompliment] = useState(compliments[0]);
-
   const router = useRouter();
 
   function handleCompliment() {
@@ -34,7 +36,18 @@ export default function ComplimentScreen() {
     <>
       <Stack.Screen options={{ headerShown: false }} />
       <ThemedView style={styles.container}>
-        <ThemedText style={styles.title}>Botão do Elogio</ThemedText>
+        <ThemedText style={styles.title}>Elogios</ThemedText>
+        <View style={styles.junimoBox}>
+          <Video
+            source={require('../assets/images/junimo.mp4')}
+            style={styles.junimoGif}
+            resizeMode="cover"
+            isLooping
+            shouldPlay
+            isMuted={false}
+            useNativeControls={false}
+          />
+        </View>
         <View style={styles.complimentBox}>
           <ThemedText style={styles.complimentText}>{compliment}</ThemedText>
         </View>
@@ -65,6 +78,21 @@ const styles = StyleSheet.create({
     color: '#D86DA4',
     marginBottom: 24,
     textAlign: 'center',
+  },
+  junimoBox: {
+    width: SCREEN_WIDTH * 0.6,
+    height: SCREEN_WIDTH * 0.6,
+    backgroundColor: '#FFF',
+    borderRadius: SCREEN_WIDTH * 0.3,
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginBottom: 24,
+    elevation: 4,
+    overflow: 'hidden',
+  },
+  junimoGif: {
+    width: '90%',
+    height: '90%',
   },
   complimentBox: {
     backgroundColor: '#FFF5F9',

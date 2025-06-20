@@ -19,7 +19,6 @@
     "expo-blur": "~14.1.5",
     "expo-constants": "~17.1.6",
     "expo-font": "~13.3.1",
-    "expo-gl": "^15.1.6",
     "expo-haptics": "~14.1.4",
     "expo-image": "~2.3.0",
     "expo-linking": "~7.1.5",
@@ -28,7 +27,6 @@
     "expo-status-bar": "~2.2.3",
     "expo-symbols": "~0.4.5",
     "expo-system-ui": "~5.0.9",
-    "expo-three": "^2.2.1",
     "expo-web-browser": "~14.2.0",
     "react": "19.0.0",
     "react-dom": "19.0.0",
@@ -39,7 +37,7 @@
     "react-native-screens": "~4.11.1",
     "react-native-web": "~0.20.0",
     "react-native-webview": "13.13.5",
-    "three": "0.132.2"
+    "expo-av": "~15.1.6"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",
