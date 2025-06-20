@@ -3,7 +3,7 @@ import { ThemedView } from '@/components/ThemedView';
 import { Colors } from '@/constants/Colors';
 import { Stack, useNavigation } from 'expo-router';
 import { useRef, useState } from 'react';
-import { ActivityIndicator, Animated, Clipboard, Dimensions, Modal, PanResponder, Platform, Pressable, StyleSheet, TextInput, View } from 'react-native';
+import { ActivityIndicator, Animated, Clipboard, Dimensions, Modal, PanResponder, Platform, Pressable, ScrollView, StyleSheet, TextInput, View } from 'react-native';
 import presentsData from '../assets/presents.json';
 
 type Present = {
@@ -111,7 +111,7 @@ export default function GiftsScreen() {
         setLoadingStory(true);
         setStory('');
         try {
-            const apiKey = 'AIzaSyDHdgpAkfZVtXv6a0uM5eZT7jm1FS5_2Ks'; 
+            const apiKey = 'AIzaSyDHdgpAkfZVtXv6a0uM5eZT7jm1FS5_2Ks';
             let prompt = `Crie uma história curta, romântica e criativa`;
             if (form.protagonist.trim()) prompt += ` com a protagonista chamada ${form.protagonist}`;
             if (form.genre.trim()) prompt += `, no gênero ${form.genre}`;
@@ -294,8 +294,10 @@ export default function GiftsScreen() {
                     <View style={styles.modalOverlay}>
                         <View style={styles.modalContent}>
                             <ThemedText style={styles.modalTitle}>História Gerada</ThemedText>
-                            <View style={{ maxHeight: 300 }}>
-                                <ThemedText style={styles.storyText}>{story}</ThemedText>
+                            <View style={{ maxHeight: 300, width: '100%' }}>
+                                <ScrollView>
+                                    <ThemedText style={styles.storyText}>{story}</ThemedText>
+                                </ScrollView>
                             </View>
                             <Pressable
                                 style={styles.geminiButton}

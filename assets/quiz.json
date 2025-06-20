@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "question": "Qual é a minha cor favorita?",
+    "options": ["Azul", "Vermelho", "Verde", "Preto"],
+    "answer": 3
+  },
+  {
+    "id": 2,
+    "question": "Qual é o meu lanche preferido?",
+    "options": ["Pizza", "Sushi", "Lasanha", "Hambúrguer"],
+    "answer": 0
+  },
+  {
+    "id": 3,
+    "question": "Qual foi o nosso primeiro passeio juntos?",
+    "options": ["Cinema", "Praia", "Parque", "Restaurante"],
+    "answer": 1
+  },
+  {
+    "id": 4,
+    "question": "Qual é o nome do meu gato?",
+    "options": ["Deb", "Nano", "Arch", "Branquinho"],
+    "answer": 0
+  },
+  {
+    "id": 5,
+    "question": "Qual é o dia do nosso aniversário de namoro?",
+    "options": ["22", "23", "31", "7"],
+    "answer": 1
+  },
+  {
+    "id": 6,
+    "question": "Qual é minha música favorita?",
+    "options": ["DAMN - Ryu, The Runner", "Saturno - VMZ", "Mantem o Pique - Ryu, The Runner", "Summertime Sadness - Lana Del Rey"],
+    "answer": 0
+  },
+  {
+    "id": 7,
+    "question": "Qual foi a coisa mais doida que me aconteceu?",
+    "options": ["Os sonhos com o Fidelis", "Carro capotar", "Passar em 1° na ETEC", "Sonho do 11 de setembro no Rio de Janeiro"],
+    "answer": 1
+  },
+  {
+    "id": 8,
+    "question": "Qual é o meu maior sonho?",
+    "options": ["Viajar o mundo", "Ter uma família", "Ter sucesso profissional", "Ser feliz com você"],
+    "answer": 3
+  },
+  {
+    "id": 9,
+    "question": "O que é equivalente a flores para um homem?",
+    "options": ["Caixa de ferramentas", "Camiseta do Sonic", "Video game", "Churrasco"],
+    "answer": 1
+  },
+  {
+    "id": 10,
+    "question": "Qual é o meu suposto hiperfoco?",
+    "options": ["Sonic", "Batalha de rima", "Dinossauro (???)", "Linux"],
+    "answer": 3
+  },
+  {
+    "id": 11,
+    "question": "Minha série favorita?",
+    "options": ["Invencível", "The Boys", "Madness Combat", "Stranger Things"],
+    "answer": 2
+  },
+  {
+    "id": 12,
+    "question": "Qual sobremesa eu mais gosto?",
+    "options": ["Pudim", "Sorvete", "Brigadeiro", "Torta de limão"],
+    "answer": 1
+  },
+  {
+    "id": 13,
+    "question": "Qual é o meu maior medo?",
+    "options": ["Altura", "Escuro", "Perder quem amo", "Canetas azuis estourando"],
+    "answer": 2
+  },
+  {
+    "id": 14,
+    "question": "Qual presente eu mais gostei de ganhar de você?",
+    "options": ["Anel de papel", "Chocolate", "Cartinha", "Flores de crochê"],
+    "answer": 3
+  },
+  {
+    "id": 15,
+    "question": "Qual é o meu hobby favorito?",
+    "options": ["Ler", "Jogar", "Assistir séries", "Programar"],
+    "answer": 3
+  },
+  {
+    "id": 16,
+    "question": "Qual é minha linguagem de programação favorita?",
+    "options": ["Python", "Java", "JavaScript", "C#"],
+    "answer": 2
+  },
+  {
+    "id": 17,
+    "question": "Qual animal eu mais gosto?",
+    "options": ["Cachorro", "Gato", "Coelho", "Pássaro"],
+    "answer": 1
+  },
+  {
+    "id": 18,
+    "question": "Qual é o meu maior defeito?",
+    "options": ["Impaciência", "Ciúmes", "Insegurança", "Ansiedade"],
+    "answer": 2
+  },
+  {
+    "id": 19,
+    "question": "Qual é a distro linux que mais gosto?",
+    "options": ["Debian", "Ubuntu", "Arch", "Fedora"],
+    "answer": 3
+  },
+  {
+    "id": 20,
+    "question": "Qual é o meu maior sonho ao seu lado?",
+    "options": ["Viajar juntos", "Morar juntos", "Casar", "Ter uma família"],
+    "answer": 3
+  }
+]
