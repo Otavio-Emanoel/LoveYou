@@ -1,50 +1,144 @@
-# Welcome to your Expo app 👋
+# Love-You App 💖
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Um app React Native feito com Expo para surpreender, divertir e encantar quem você ama!  
+Inclui elogios animados, música, presentes virtuais, quiz personalizado, histórias românticas e muito mais.
 
-## Get started
+---
 
-1. Install dependencies
+## ✨ Funcionalidades
 
+- **Elogios Aleatórios:** Receba frases fofas e motivacionais com animações de corações.
+- **Música Animada:** Toque músicas divertidas enquanto vê os elogios, com animação visual.
+- **Presentes Virtuais:** Envie presentes digitais com frases e sons especiais.
+- **Quiz Personalizado:** Teste o quanto você conhece a pessoa amada.
+- **Histórias Românticas:** Gere histórias criativas usando IA (Gemini API).
+- **Animações Temáticas:** Junimos e galinha dançando, corações voando e muito mais.
+- **Modal de Confirmação:** Ao sair da tela de elogios com música tocando, aparece um modal para confirmar a parada da música.
+- **Toque nos Junimos/Galinha:** Clique nos personagens para soltar corações animados.
+
+---
+
+## 🚀 Como rodar o projeto
+
+1. **Instale as dependências:**
    ```bash
    npm install
    ```
-
-2. Start the app
-
+2. **Inicie o app:**
    ```bash
    npx expo start
    ```
+   Use o QR Code no Expo Go ou rode em emulador Android/iOS.
 
-In the output, you'll find options to open the app in a
+---
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+## 📱 Como gerar o APK/AAB
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
+### 1. Instale o EAS CLI:
 ```bash
-npm run reset-project
+npm install -g eas-cli
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+### 2. Configure e faça login:
+```bash
+eas login
+eas build:configure
+```
 
-## Learn more
+### 3. Build para Android (AAB):
+```bash
+eas build -p android
+```
+O arquivo `.aab` é para Play Store.
 
-To learn more about developing your project with Expo, look at the following resources:
+### 4. Build para Android (APK para teste):
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+Edite o arquivo `eas.json`:
+```json
+{
+  "build": {
+    "preview-apk": {
+      "android": {
+        "buildType": "apk"
+      }
+    }
+  }
+}
+```
 
-## Join the community
+Rode:
+```bash
+eas build -p android --profile preview-apk
+```
+O link do APK será exibido ao final.
 
-Join our community of developers creating universal apps.
+### 5. Build para iOS:
+```bash
+eas build -p ios
+```
+Necessário conta Apple Developer.
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+---
+
+## 🛠️ Estrutura do Projeto
+
+- `/app`: Telas do app (elogios, presentes, quiz, etc).
+- `/components`: Componentes reutilizáveis (ThemedText, ThemedView, etc).
+- `/assets`: Imagens, vídeos e músicas.
+- `/constants`: Cores e temas.
+- `/scripts`: Scripts utilitários.
+- `HowToDo.md`: Guia detalhado de desenvolvimento e personalização.
+
+---
+
+## 🖌️ Personalização
+
+- **Cores e Tema:** Edite `constants/Colors.ts`.
+- **Ícone do App:** Troque `assets/images/icon.png` e `adaptive-icon.png`.
+- **Frases e Elogios:** Edite os arrays nas telas ou mova para arquivos separados.
+- **Músicas:** Adicione/remova arquivos em `assets/music/`.
+
+---
+
+## 💡 Dicas de Uso
+
+- Toque nos Junimos ou na galinha para soltar corações animados.
+- Ao sair da tela de elogios com música tocando, confirme no modal para evitar bugs.
+- Use o quiz e presentes para criar momentos divertidos e personalizados.
+- Gere histórias românticas usando a tela de presentes (API Gemini).
+
+---
+
+## 🧑‍💻 Desenvolvimento
+
+- Projeto criado com [Expo](https://expo.dev/) e [Expo Router](https://docs.expo.dev/router/introduction/).
+- Animações com `Animated` do React Native.
+- Sons com `expo-av`.
+- API Gemini para geração de histórias (configure sua chave na tela de presentes).
+
+---
+
+## 📦 Publicação
+
+- Teste em Android, iOS e Web.
+- Ajuste splash screen e favicon em `app.json`.
+- Para publicar, siga a [documentação do Expo](https://docs.expo.dev/classic/building-standalone-apps/).
+
+---
+
+## 📚 Referências e Guias
+
+- [Expo Docs](https://docs.expo.dev/)
+- [React Native Docs](https://reactnative.dev/)
+- [Expo Router](https://docs.expo.dev/router/introduction/)
+- [Guia de Desenvolvimento do Projeto](HowToDo.md)
+
+---
+
+## 🤝 Contribua
+
+Sinta-se à vontade para abrir issues, sugerir melhorias ou enviar PRs!
+
+---
+
+**Divirta-se criando e compartilhando amor com o Love-You App! 💖**
